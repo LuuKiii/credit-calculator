@@ -13,16 +13,38 @@
 	<h1>Kalkulator kredytowy</h1>
 
 	<h:form id="bla">
-  		Kwota kredytu: <p:inputText value="#{creditBB.x}" />
-		<br />
 		
-		Oprocentowanie: <p:inputText value="#{creditBB.percentage}" />
-		<br />
-			
-  		Ilosc rat: <p:inputText value="#{creditBB.time}" />
-		<br />
+		<h:panelGrid id="grid" columns="3" cellpadding="7">
+		
+            <p:outputLabel for="x" value="Pożyczona kwota"/>
+            <p:inputNumber id="x" 
+            value="#{creditBB.x}" 
+            required="true"
+            requiredMessage="Wartość kwoty pożyczki nie może być pusta"/>
+            <p:message for="x"/>
+
+            <p:outputLabel for="percentage" value="Oprocentowanie:"/>
+            <p:inputNumber id="percentage" 
+            value="#{creditBB.percentage}" 
+            required="true" 
+            requiredMessage="Wartość oprocentowania nie może być pusta"/>
+            <p:message for="percentage" />
+
+            <p:outputLabel for="time" value="Ilosc rat:"/>
+            <p:inputNumber id="time" 
+            value="#{creditBB.time}" 
+            required="true"
+            requiredMessage="Wartość czasu spłaty nie może być pusta"/>
+            <p:message for="time"/>
+            
+            <p:commandButton value="Dodaj" action="#{creditBB.calc()}" update="msg"/>
+
+        </h:panelGrid>
+        
 		<p:messages id="msg" />
-		<p:commandButton value="Dodaj" action="#{creditBB.calc()}" update="@form"/>
+		
+		
+		
 		<br />
 
 		<br />

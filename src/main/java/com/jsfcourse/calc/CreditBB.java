@@ -11,9 +11,9 @@ import javax.faces.context.FacesContext;
 @RequestScoped
 //@SessionScoped
 public class CreditBB {
-	private String x;
-	private String time;
-	private String percentage;
+	private Double x;
+	private Double time;
+	private Double percentage;
 	private Double result=0.0;
 
 	@Inject
@@ -21,44 +21,45 @@ public class CreditBB {
 
 	
 	
-	public String getX() {
+
+
+	public Double getX() {
 		return x;
 	}
 
-	public void setX(String x) {
+	public void setX(Double x) {
 		this.x = x;
 	}
 
-	public String getTime() {
+	public Double getTime() {
 		return time;
 	}
 
-	public void setTime(String time) {
+	public void setTime(Double time) {
 		this.time = time;
 	}
 
-	public String getPercentage() {
+	public Double getPercentage() {
 		return percentage;
 	}
 
-	public void setPercentage(String percentage) {
+	public void setPercentage(Double percentage) {
 		this.percentage = percentage;
 	}
 
-	
 	public Double getResult() {
 		return result;
 	}
 
 	public boolean doTheMath() {
 		try {
-			double x = Double.parseDouble(this.x);
-			double time = Double.parseDouble(this.time);
-			double percentage = Double.parseDouble(this.percentage);
+			double x = this.x;
+			double time = this.time;
+			double percentage = this.percentage;
 
 			result = (x * percentage/100)+(x/time);
 
-			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Operacja wykonana poprawnie", null));
+			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Operacja wykonana poprawnie" + this.result , null));
 			return true;
 		} catch (Exception e) {
 			ctx.addMessage(null,
@@ -67,10 +68,9 @@ public class CreditBB {
 		}
 	}
 
-	// Go to "showresult" if ok
 	public String calc() {
 		if (doTheMath()) {
-			return "showresult";
+			return null;
 		}
 		return null;
 	}
