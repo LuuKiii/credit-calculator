@@ -56,8 +56,28 @@ h2{
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
 	
+	padding: 1px;
+	
 	background-color: #a8a59b;
 	box-sizing: border-box;
+}
+
+#navbar{
+	display: flex;
+}
+
+#navbar a{
+	margin: 0 1px;
+	padding: 10px;
+	flex-grow: 1;
+	text-align: center;
+	background-color: black;
+	color: white;
+	
+}
+
+#navbar a:hover{
+	background-color: #3b3b3b;
 }
 
 #footer{
