@@ -31,21 +31,30 @@
             <p:inputNumber id="x" 
             value="#{creditBB.x}" 
             required="true"
-            requiredMessage="Wartość kwoty pożyczki nie może być pusta"/>
+            requiredMessage="Wartość kwoty pożyczki nie może być pusta"
+            validatorMessage="Kwota kredytu musi być większa niż 1000zł">
+            <f:validateDoubleRange minimum="1000"/>
+            </p:inputNumber>
             <p:message for="x"/>
 
             <p:outputLabel for="percentage" value="Oprocentowanie:"/>
             <p:inputNumber id="percentage" 
             value="#{creditBB.percentage}" 
             required="true" 
-            requiredMessage="Wartość oprocentowania nie może być pusta"/>
+            requiredMessage="Wartość oprocentowania nie może być pusta"
+            validatorMessage="Oprocentowanie nie może być większe niż 100%">
+            <f:validateDoubleRange minimum="0.1" maximum="100"/>
+            </p:inputNumber>
             <p:message for="percentage" />
 
             <p:outputLabel for="time" value="Liczba miesięcy spłacania kredytu:"/>
             <p:inputNumber id="time" 
             value="#{creditBB.time}" 
             required="true"
-            requiredMessage="Wartość czasu spłaty nie może być pusta"/>
+            requiredMessage="Wartość czasu spłaty nie może być pusta"
+            validatorMessage="Czas spłacania kredytu musi być większy niż 6 miesięcy">
+            <f:validateDoubleRange minimum="6"/>
+            </p:inputNumber>
             <p:message for="time"/>
             
             <div class="btn-container">
