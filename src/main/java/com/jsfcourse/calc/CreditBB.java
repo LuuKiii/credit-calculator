@@ -11,10 +11,10 @@ import javax.faces.context.FacesContext;
 @RequestScoped
 //@SessionScoped
 public class CreditBB {
-	private Double x;
-	private Double time;
-	private Double percentage;
-	private Double result=0.0;
+	private Double x = 0.00;
+	private Double time = 0.00;
+	private Double percentage = 0.0;
+	private Double result;
 
 	@Inject
 	FacesContext ctx;

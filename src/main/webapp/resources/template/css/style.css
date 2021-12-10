@@ -1,0 +1,75 @@
+html, body{
+	margin:0;
+	height: 100%;
+	
+	background-color: #d4d0c5;
+	font-family: 'Century Gothic',helvetica,verdana,arial;
+}
+	
+h2{
+	font-size: 18px;
+}
+
+ body .ui-panel .ui-panel-content {
+ 	min-height: 0;
+	background-color: #a8a59b;
+}
+
+#page_wrapper{
+	margin: 0px auto;
+	min-width: 700px;
+	max-width: 960px; 
+	min-height: 100%;
+	
+	background-color: #bab6a8;
+}
+
+#calculator-container{
+	display: flex;
+	margin: 20px auto 0;
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 10px;
+	
+	background-color: #a8a59b;
+	width: fit-content;
+	justify-content:center;
+	box-shadow: 0 0 10px;
+}
+
+
+#title{
+	text-align: center;
+	background-color: #a8a59b;
+}
+
+#bankIMG{
+	width: 50px;
+	transform: translate(0px,10px);
+}
+
+#header{
+	margin-top: -2px;
+	margin-bottom: 30px;
+	
+	border: 2px solid black;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	
+	background-color: #a8a59b;
+	box-sizing: border-box;
+}
+
+#footer{
+	position: absolute;
+	bottom: 0;
+	
+	border-top: 1px solid black;
+	padding-bottom: 30px;
+	width: 100%;
+	
+	background-color: #a8a59b;
+	font-family: "Open Sans","Helvetica Neue",sans-serif;
+	font-size: 0.9rem;
+	text-align: center;	
+}

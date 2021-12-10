@@ -10,9 +10,20 @@
 <ui:composition template="/templates/main-template.xhtml">
 	<ui:define name="pageContent">
 	
-	<h1>Kalkulator kredytowy</h1>
-
-	<h:form id="bla">
+	<p:panel id="title">
+			<h1>Kalkulator <h:graphicImage id="bankIMG" name="img/bank-icon.jpg" library="template" /> Kredytowy</h1>
+			
+			<h2>Oblicz wysokość raty w kilka chwil!</h2>
+	</p:panel>
+	
+	<p:panel closeable = "true" toggleable="true">
+		<p:messages id="msg" />
+	</p:panel>
+	
+	
+	<h:form id="calculator-container">
+		
+		
 		
 		<h:panelGrid id="grid" columns="3" cellpadding="7">
 		
@@ -37,17 +48,13 @@
             requiredMessage="Wartość czasu spłaty nie może być pusta"/>
             <p:message for="time"/>
             
-            <p:commandButton value="Dodaj" action="#{creditBB.calc()}" update="msg"/>
-
+            <div class="btn-container">
+            	<p:commandButton  style="margin-top: 20px;" value="Oblicz" action="#{creditBB.calc()}" update="msg"/>
+			</div>
+			
         </h:panelGrid>
         
-		<p:messages id="msg" />
-		
-		
-		
-		<br />
 
-		<br />
 	</h:form>
 	</ui:define>
 </ui:composition>

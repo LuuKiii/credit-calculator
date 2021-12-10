@@ -8,24 +8,26 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title><ui:insert name="title">...</ui:insert></title>
-	<h:outputStylesheet name="style.css" library="css" />
+	<h:outputStylesheet name="css/style.css" library="template" />
+	
 </h:head>
 
 <h:body>
 	<div id="page_wrapper">
 		<ui:insert name="header">
-			<div id="header" class="box bottom-space">
+			<div id="header">
 				<ui:include src="/templates/header-snippet.xhtml" />
 			</div>
 		</ui:insert>
-		<div id="content" class="box bottom-space">
+		
+		<div id="content">
 			<ui:insert name="pageContent"></ui:insert>
 		</div>
 
 	</div>
 	
 		<ui:insert name="footer">
-			<div id="footer" class="box bottom-space">
+			<div id="footer" >
 				<ui:include src="/templates/footer-snippet.xhtml" />
 			</div>
 		</ui:insert>
