@@ -2,9 +2,13 @@ package com.jsfcourse.calc;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+
+import java.io.IOException;
+
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
 @Named
@@ -78,6 +82,11 @@ public class CreditBB {
 			return null;
 		}
 		return null;
+	}
+	
+	public void redirect() throws IOException {
+		ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+		externalContext.redirect("https://www.ican.pl/b/co-powinienes-wiedziec-zanim-wezmiesz-kredyt-gotowkowy/PMgwOzqr7");
 	}
 
 }

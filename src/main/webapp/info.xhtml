@@ -4,13 +4,29 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	>
 
 
 <ui:composition template="/templates/main-template.xhtml">
 	<ui:define name="pageContent">
 	
-		<h1>Some Content</h1>
+		<p:panel >
+			<h1>Obliczanie wysokości miesięcznej raty</h1>
+			 Kalkulator umożliwia obliczanie wysokości miesięcznej raty na podstawie wypożyczonej kwoty,
+			 oprocentowania oraz liczby miesięcy, w których kredyt ma zostać spłacony.
+			 <br/><br/><br/>
+			 
+			 <span class="formula">WMR = <span class="upper">P(o(1+o)^m)</span><span class="line"/><span class="lower">((1+o)^m -1)</span></span>
+			 <br/><br/><br/>
+			 gdzie: <br/>
+			 WMR - wysokość miesięcznej raty<br/>
+			 P - pożyczona kwota<br/>
+			 o - oprocentowanie<br/>
+			 m - liczba miesięcy do spłaty <br/>
+		</p:panel>
+		
+		
 	</ui:define>
 </ui:composition>
 </html>
