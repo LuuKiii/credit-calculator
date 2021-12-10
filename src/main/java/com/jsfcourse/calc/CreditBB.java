@@ -12,7 +12,7 @@ import javax.faces.context.FacesContext;
 //@SessionScoped
 public class CreditBB {
 	private Double x = 0.00;
-	private Double time = 0.00;
+	private int time = 0;
 	private Double percentage = 0.0;
 	private Double result;
 
@@ -31,11 +31,13 @@ public class CreditBB {
 		this.x = x;
 	}
 
-	public Double getTime() {
+	
+
+	public int getTime() {
 		return time;
 	}
 
-	public void setTime(Double time) {
+	public void setTime(int time) {
 		this.time = time;
 	}
 
@@ -54,12 +56,15 @@ public class CreditBB {
 	public boolean doTheMath() {
 		try {
 			double x = this.x;
-			double time = this.time;
-			double percentage = this.percentage;
+			int time = this.time;
+			double interest = this.percentage/100;
+			double i = interest/12; // Oprocentowanie na miesi¹c
 
-			result = (x * percentage/100)+(x/time);
+			result = x*(i*Math.pow(1+i, time))/(Math.pow(1+i, time)-1);
+			
+			result = (double)Math.round(result * 100d)/100d;
 
-			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Operacja wykonana poprawnie" + this.result , null));
+			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Wysokoœæ raty na miesi¹c wynosi : " + this.result + " z³", null));
 			return true;
 		} catch (Exception e) {
 			ctx.addMessage(null,

@@ -16,7 +16,7 @@
 			<h2>Oblicz wysokość raty w kilka chwil!</h2>
 	</p:panel>
 	
-	<p:panel closeable = "true" toggleable="true">
+	<p:panel>
 		<p:messages id="msg" />
 	</p:panel>
 	
@@ -41,7 +41,7 @@
             requiredMessage="Wartość oprocentowania nie może być pusta"/>
             <p:message for="percentage" />
 
-            <p:outputLabel for="time" value="Ilosc rat:"/>
+            <p:outputLabel for="time" value="Liczba miesięcy spłacania kredytu:"/>
             <p:inputNumber id="time" 
             value="#{creditBB.time}" 
             required="true"
