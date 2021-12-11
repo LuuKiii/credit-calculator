@@ -25,7 +25,7 @@
 		
 		
 		
-		<h:panelGrid id="grid" columns="3" cellpadding="7">
+		<h:panelGrid id="grid" columns="2" cellpadding="7">
 		
             <p:outputLabel for="x" value="Pożyczona kwota"/>
             <p:inputNumber id="x" 
@@ -35,7 +35,7 @@
             validatorMessage="Kwota kredytu musi być większa niż 1000zł">
             <f:validateDoubleRange minimum="1000"/>
             </p:inputNumber>
-            <p:message for="x"/>
+           
 
             <p:outputLabel for="percentage" value="Oprocentowanie:"/>
             <p:inputNumber id="percentage" 
@@ -45,7 +45,7 @@
             validatorMessage="Oprocentowanie nie może być większe niż 100%">
             <f:validateDoubleRange minimum="0.1" maximum="100"/>
             </p:inputNumber>
-            <p:message for="percentage" />
+            
 
             <p:outputLabel for="time" value="Liczba miesięcy spłacania kredytu:"/>
             <p:inputNumber id="time" 
@@ -55,13 +55,16 @@
             validatorMessage="Czas spłacania kredytu musi być większy niż 6 miesięcy">
             <f:validateDoubleRange minimum="6"/>
             </p:inputNumber>
-            <p:message for="time"/>
-            
-            <div class="btn-container">
-            	<p:commandButton  style="margin-top: 20px;" value="Oblicz" action="#{creditBB.calc()}" update="msg"/>
-			</div>
+           
+           
+          	<p:column></p:column>
+
+            <p:commandButton style="margin: 10px auto; border: 0; padding: 0 50px; background-color: black;" value="Oblicz" action="#{creditBB.calc()}" update="msg"/>	
+			
 			
         </h:panelGrid>
+        
+       
         
 
 	</h:form>
